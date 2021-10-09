@@ -101,7 +101,7 @@ namespace SampleBlogFunctions
         [Function("DeleteBlogItem")]
         [OpenApiOperation(operationId: nameof(DeleteBlogItem), Description = "Delete Blog Item.", Visibility = Microsoft.Azure.WebJobs.Extensions.OpenApi.Core.Enums.OpenApiVisibilityType.Important)]
         [OpenApiSecurity("BearerAuth", Microsoft.OpenApi.Models.SecuritySchemeType.ApiKey, In = Microsoft.Azure.WebJobs.Extensions.OpenApi.Core.Enums.OpenApiSecurityLocationType.Header, Name = "Authorization")]
-        [OpenApiParameter("id", Type = typeof(Guid))]
+        [OpenApiParameter("id", Type = typeof(Guid), Required = true , In = Microsoft.OpenApi.Models.ParameterLocation.Path)]
         [OpenApiResponseWithoutBody(HttpStatusCode.OK)]
         [OpenApiResponseWithoutBody(HttpStatusCode.BadRequest)]
         [OpenApiResponseWithoutBody(HttpStatusCode.Unauthorized)]
